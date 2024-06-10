@@ -1,33 +1,71 @@
+/* Inria serif */
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:wght@700&display=swap");
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Paprika */
+@import url("https://fonts.googleapis.com/css2?family=Paprika&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span {
+    @apply text-gray-950;
+  }
+  h1 {
+    @apply font-Poppins lg:text-6xl text-3xl font-extrabold;
+  }
+  h2 {
+    @apply font-Inria text-5xl font-bold;
+  }
+  h3 {
+    @apply font-Paprika text-5xl;
+  }
+  h4 {
+    @apply md:text-4xl text-3xl !leading-relaxed font-Paprika;
+  }
+  h6 {
+    @apply font-Paprika font-bold text-[#253D57] leading-8;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  p {
+    @apply font-Poppins text-[0.95rem];
+  }
+  button {
+    @apply font-Poppins;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .btn {
+    @apply py-2 px-9 border-2 rounded-md
+     rounded-br-3xl font-medium;
   }
+  .title {
+    @apply md:text-3xl text-2xl;
+  }
+  .subtitle {
+    @apply text-gray-300;
+  }
+}
+.swiper-pagination-bullet {
+  background-color: #75560c !important;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: #dbc30c !important;
+  opacity: 1 !important;
 }
